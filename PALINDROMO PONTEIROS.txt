@@ -1,0 +1,51 @@
+#include <iostream.h>
+#define MAX 20
+
+int pali ();
+
+void main( )
+{
+
+	pali();
+
+	if ((pali())==0)
+	{
+		cout<< "NAO EH PALINDROMO";
+	}
+	else
+	{
+		cout << "PALINDROMO, MULEQUE!";
+	}
+
+
+}
+
+
+int pali()
+{
+	int k=1,i, len=0;
+	char *p1, *p2, nome[MAX];
+	p1=nome;
+	p2=nome;
+
+	cout<< "Digite uma palavra de no maximo "<<MAX<<" caracteres: ";
+	cin >> nome;
+
+	while (*p1!='\0')          //CHECA COMPRIMENTO DA PALAVRA (COMO SE FOSSE A 'STRLEN')
+	{
+		len++;
+		p1++;
+	}
+
+	cout<<"O comprimento da palavra e´: "<<len<<endl;
+
+	for (i=0; i<=len-1; i++)                   //CHECA SE E´ PALINDROMO E RETORNA '0' CASO NAO SEJA.
+		{
+			if ((p2[i])!=(p2[len-1-i]))
+			{
+			 k=0;
+			 return(k);
+			}
+		}
+return(k);
+}
